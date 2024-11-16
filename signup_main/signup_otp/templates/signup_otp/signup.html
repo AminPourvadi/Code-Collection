@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت‌نام</title>
+</head>
+<body>
+    <h1>ثبت‌نام کاربر جدید</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+           {{ 'name'}}:{{ form.full_name }} 
+        </div>
+        <div>
+            {{ 'phone number'}}:{{ form.phone_number }}  
+        </div>
+        {% comment %} <div>
+            {{ 'otp code'}}:{{ form.otp }}
+        </div> {% endcomment %}
+        <button type="submit">ثبت‌نام</button>
+    </form>
+    {% if otp %}
+        <p>کد شما با موفقیت فرستاده شد</p>
+    {% endif %}
+</body>
+</html>
