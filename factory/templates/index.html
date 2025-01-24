@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contact %}
+<section>
+    <div class="relative w-full h-96">
+        <div id="carousel" class="relative w-full h-full">
+          <div class="absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out carousel-item">
+            <img src="{% static "images/img (1).jpg" %}" alt="Image 2" class="w-full h-full object-cover">
+          </div>
+          <div class="absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out carousel-item">
+            <img src="{% static "images/img (2).jpg" %}" alt="Image 2" class="w-full h-full object-cover">
+          </div>
+          <div class="absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out carousel-item">
+            <img src="{% static "images/img (3).jpg" %}" alt="Image 3" class="w-full h-full object-cover">
+          </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16  flex justify-center">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center space-y-8 md:space-y-0">
+            <!-- بخش متن -->
+            <div class="w-full md:w-1/2 opacity-0 fade-in-left md:mr-6 pl-5">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-gray-100">صنایع فولاد آلیاژی پاسارگاد</h2>
+                <p class="text-base sm:text-lg text-justify text-gray-600 mt-4 dark:text-gray-50">
+                    شرکت صنایع فولاد آلیاژی پاسارگاد (سهامی خاص) متعلق به بخش خصوصی با هدف ایجاد یک مجتمع کامل فولادسازی از مرحله دریافت سنگ آهن از معدن تا تولید انواع فولادهای آلیاژی منطبق با استانداردهای بین المللی، در شهر شیراز، ضلع جنوبی دریاچه مهارلو (جاده شیراز- جهرم).
+                </p>
+                <p class="text-base sm:text-lg text-justify text-gray-600 mt-4 dark:text-gray-50">
+                    پروسه‌های تولید در کارخانه و روند اداری در سازمان صنایع فولاد آلیاژی پاسارگاد از قوانین حفظ محیط زیستی بین‌المللی پیروی می‌کند.
+                </p>
+                <p class="text-base sm:text-lg text-justify text-gray-600 mt-4 dark:text-gray-50">
+                    به عنوان بزرگترین مجتمع صنعتی تولید کننده فولاد در ایران، هدف ما حفظ این عنوان با تلاش مستمر و حفظ کیفیت تولیدات می‌باشد.
+                </p>
+                <p class="text-base sm:text-lg text-justify text-gray-600 mt-4 dark:text-gray-50">
+                    در صنایع فولاد آلیاژی پاسارگاد، همیشه سعی شده است تا محصولات نهایی از مقبولیت جهانی و استانداردهای روز دنیا بهره‌مند باشند.
+                </p>
+            </div>
+
+            <!-- بخش تصویر -->
+            <div class="w-full md:w-1/2">
+                <img src="{% static "images/industrial-Photo-2.jpg" %}" alt="Steel Factory" class="w-full h-auto object-cover rounded-lg opacity-0 fade-in-right">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 ">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12 animate__animated animate__fadeInDown">مقالات</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <!-- مقاله‌ها -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 animate__animated animate__fadeInUp dark:bg-slate-900 dark-mode-transition">
+                <img src="{% static "images/product (1).jpg" %}" alt="Article 1" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100">عنوان مقاله 1</h3>
+                    <p class="text-gray-600 mt-4 dark:text-gray-50">خلاصه‌ای از مقاله 1 که به توضیح مطلب پرداخته و بیننده را ترغیب به کلیک می‌کند...</p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-800 mt-4 inline-block">ادامه مطلب</a>
+                </div>
+            </div>
+            
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 animate__animated animate__fadeInUp dark:bg-slate-900 dark-mode-transition">
+                <img src="{% static "images/product (2).jpg" %}" alt="Article 1" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100">عنوان مقاله 1</h3>
+                    <p class="text-gray-600 mt-4 dark:text-gray-50">خلاصه‌ای از مقاله 1 که به توضیح مطلب پرداخته و بیننده را ترغیب به کلیک می‌کند...</p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-800 mt-4 inline-block">ادامه مطلب</a>
+                </div>
+            </div>
+            
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 animate__animated animate__fadeInUp dark:bg-slate-900 dark-mode-transition">
+                <img src="{% static "images/product (3).jpg" %}" alt="Article 1" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100">عنوان مقاله 1</h3>
+                    <p class="text-gray-600 mt-4 dark:text-gray-50">خلاصه‌ای از مقاله 1 که به توضیح مطلب پرداخته و بیننده را ترغیب به کلیک می‌کند...</p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-800 mt-4 inline-block">ادامه مطلب</a>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 animate__animated animate__fadeInUp dark:bg-slate-900 dark-mode-transition">
+                <img src="{% static "images/product (3).jpg" %}" alt="Article 1" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100">عنوان مقاله 1</h3>
+                    <p class="text-gray-600 mt-4 dark:text-gray-50">خلاصه‌ای از مقاله 1 که به توضیح مطلب پرداخته و بیننده را ترغیب به کلیک می‌کند...</p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-800 mt-4 inline-block">ادامه مطلب</a>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 animate__animated animate__fadeInUp dark:bg-slate-900 dark-mode-transition">
+                <img src="{% static "images/product (1).jpg" %}" alt="Article 1" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100">عنوان مقاله 1</h3>
+                    <p class="text-gray-600 mt-4 dark:text-gray-50">خلاصه‌ای از مقاله 1 که به توضیح مطلب پرداخته و بیننده را ترغیب به کلیک می‌کند...</p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-800 mt-4 inline-block">ادامه مطلب</a>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 animate__animated animate__fadeInUp dark:bg-slate-900 dark-mode-transition">
+                <img src="{% static "images/product (2).jpg" %}" alt="Article 1" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100">عنوان مقاله 1</h3>
+                    <p class="text-gray-600 mt-4 dark:text-gray-50">خلاصه‌ای از مقاله 1 که به توضیح مطلب پرداخته و بیننده را ترغیب به کلیک می‌کند...</p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-800 mt-4 inline-block">ادامه مطلب</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

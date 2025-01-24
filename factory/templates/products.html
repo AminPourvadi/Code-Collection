@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contact %}
+<section>
+    <div class="container mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- دسته‌بندی ۱ -->
+        <div class="group relative overflow-hidden rounded-lg shadow-lg bg-white">
+            <img src="{% static "images/product (1).jpg" %}" alt="محصولات فولادی" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 class="text-white text-xl font-bold">محصولات فولادی</h3>
+            </div>
+            <div class="p-4">
+                <p class="text-gray-700">تولید و عرضه انواع ورق‌های فولادی و میلگرد</p>
+            </div>
+        </div>
+        
+        <!-- دسته‌بندی ۲ -->
+        <div class="group relative overflow-hidden rounded-lg shadow-lg bg-white">
+            <img src="{% static "images/product (2).jpg" %}" alt="خدمات ماشین‌کاری" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 class="text-white text-xl font-bold">خدمات ماشین‌کاری</h3>
+            </div>
+            <div class="p-4">
+                <p class="text-gray-700">خدمات پیشرفته برش، تراش و جوشکاری</p>
+            </div>
+        </div>
+        
+        <!-- دسته‌بندی ۳ -->
+        <div class="group relative overflow-hidden rounded-lg shadow-lg bg-white">
+            <img src="{% static "images/product (3).jpg" %}" alt="صادرات محصولات فولادی" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 class="text-white text-xl font-bold">صادرات محصولات</h3>
+            </div>
+            <div class="p-4">
+                <p class="text-gray-700">صادرات محصولات فولادی به بازارهای جهانی</p>
+            </div>
+        </div>
+    </div>            
+</section>
+
+<section>
+    <div id="accordion-collapse" class="p-7 space-y-3">
+        <!-- بخش اول -->
+        <h2 id="accordion-collapse-heading-1">
+            <button type="button" class="accordion-button flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" aria-expanded="true" data-target="#accordion-collapse-body-1">
+                <span>شرکت فولاد چیست؟</span>
+            </button>
+        </h2>
+        <div id="accordion-collapse-body-1" class="accordion-content max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out">
+            <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                <p class="mb-2 text-gray-500 dark:text-gray-400">شرکت فولاد یکی از پیشروان در صنعت فولاد ایران است و محصولاتی از قبیل ورق‌های فولادی، میلگرد، و پروفیل‌های صنعتی را تولید می‌کند.</p>
+                <p class="text-gray-500 dark:text-gray-400">برای مشاهده محصولات بیشتر <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">اینجا کلیک کنید</a>.</p>
+            </div>
+        </div>
+
+        <!-- بخش دوم -->
+        <h2 id="accordion-collapse-heading-2">
+            <button type="button" class="accordion-button flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" aria-expanded="false" data-target="#accordion-collapse-body-2">
+                <span>جدول مشخصات محصولات</span>
+            </button>
+        </h2>
+        <div id="accordion-collapse-body-2" class="accordion-content max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out">
+            <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                <table class="w-full text-right text-gray-500 dark:text-gray-400">
+                    <thead class="bg-gray-100 dark:bg-gray-900">
+                        <tr>
+                            <th class="p-2 border dark:border-gray-700">محصول</th>
+                            <th class="p-2 border dark:border-gray-700">ابعاد</th>
+                            <th class="p-2 border dark:border-gray-700">قیمت (تومان)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-2 border dark:border-gray-700">ورق فولادی</td>
+                            <td class="p-2 border dark:border-gray-700">2x1 متر</td>
+                            <td class="p-2 border dark:border-gray-700">1,200,000</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2 border dark:border-gray-700">میلگرد</td>
+                            <td class="p-2 border dark:border-gray-700">قطر 12 میلی‌متر</td>
+                            <td class="p-2 border dark:border-gray-700">950,000</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2 border dark:border-gray-700">پروفیل صنعتی</td>
+                            <td class="p-2 border dark:border-gray-700">6x6 سانتی‌متر</td>
+                            <td class="p-2 border dark:border-gray-700">1,800,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- بخش سوم -->
+        <h2 id="accordion-collapse-heading-3">
+            <button type="button" class="accordion-button flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" aria-expanded="false" data-target="#accordion-collapse-body-3">
+                <span>چرا شرکت فولاد را انتخاب کنیم؟</span>
+            </button>
+        </h2>
+        <div id="accordion-collapse-body-3" class="accordion-content max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out">
+            <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                <p class="mb-2 text-gray-500 dark:text-gray-400">شرکت فولاد با بهره‌گیری از جدیدترین تکنولوژی‌های روز دنیا و تجربه چندین ساله، محصولات با کیفیت بالا و مطابق با استانداردهای جهانی تولید می‌کند.</p>
+                <p class="mb-2 text-gray-500 dark:text-gray-400">ویژگی‌های اصلی محصولات ما:</p>
+                <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
+                    <li>دوام بالا و مقاومت در برابر خوردگی</li>
+                    <li>قیمت رقابتی</li>
+                    <li>پشتیبانی و خدمات پس از فروش</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

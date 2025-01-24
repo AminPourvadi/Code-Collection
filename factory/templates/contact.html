@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block contact %}
+<section class="p-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-50">
+    <div class="bg-red-600 p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-500">
+        <h2 class="text-2xl font-semibold mb-2">آدرس دفتر مرکزی</h2>
+        <p>تهران، خیابان صنعت، ساختمان شماره ۲</p>
+    </div>
+    <div class="bg-red-600 p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-500">
+        <h2 class="text-2xl font-semibold mb-2">شماره تماس</h2>
+        <p>+98 21 1234 5678</p>
+    </div>
+    <div class="bg-red-600 p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-500">
+        <h2 class="text-2xl font-semibold mb-2">ایمیل</h2>
+        <p>info@steelcompany.com</p>
+    </div>
+</section>
+
+<div class=" text-center p-12">
+    <iframe
+        class="w-full h-96 rounded-lg shadow-lg border-none animate-slide-in"
+        src="https://maps.google.com/maps?q=tehran&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        allowfullscreen=""
+        loading="lazy">
+    </iframe>
+</div>
+
+{% endblock %}
