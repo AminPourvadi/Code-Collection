@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contact %}
+<section>
+    <div class="container mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for product in products %}
+        <div class="group relative overflow-hidden rounded-lg shadow-lg bg-white">
+            <img src="{{ product.image.url }}" alt="{{ product.title }}" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 class="text-white text-xl font-bold">
+                    {% if language == 'fa' %}
+                        {{ product.title_fa }}
+                    {% elif language == 'ar' %}
+                        {{ product.title_ar }}
+                    {% else %}
+                        {{ product.title_en }}
+                    {% endif %}
+                </h3>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section>
+    <div id="accordion-collapse" class="p-7 space-y-3">
+        {% for feature in features %}
+        <div>
+            <h2 id="accordion-collapse-heading-{{ forloop.counter }}">
+                <button type="button" class="accordion-button flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" aria-expanded="false" data-target="#accordion-collapse-body-{{ forloop.counter }}">
+                    <span>{{ feature.title }}</span>
+                </button>
+            </h2>
+            <div id="accordion-collapse-body-{{ forloop.counter }}" class="accordion-content max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out">
+                <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                    <div class="mb-2 text-gray-500 dark:text-gray-400">{{ feature.description }}</div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}
