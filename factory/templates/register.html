@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <link rel="stylesheet" href="{% static "css/output.css" %}">
+    <link href="https://cdn.jsdelivr.net/npm/vazir-font/css/vazir.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="font-vazir bg-gray-50 min-h-screen flex items-center justify-center">
+    <main class="w-full max-w-md">
+        <!-- فرم ثبت‌نام -->
+        <div id="register-form" class="bg-white p-8 rounded-lg shadow-lg fade-in">
+            <h2 class="text-2xl font-bold text-center mb-6">ثبت‌نام</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="mb-4">
+                    {{ form.name.label_tag }}
+                    {{ form.name }}
+                </div>
+                <div class="mb-4">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                </div>
+                <div class="mb-4">
+                    {{ form.password1.label_tag }}
+                    {{ form.password1 }}
+                </div>
+                <div class="mb-4">
+                    {{ form.password2.label_tag }}
+                    {{ form.password2 }}
+                </div>
+                <button type="submit" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition duration-300">ثبت‌نام</button>
+            </form>
+            <p class="mt-4 text-sm text-center">
+                حساب کاربری دارید؟
+                <a href="{% url 'login' %}" id="show-login" class="text-green-500 hover:underline">ورود</a>
+            </p>
+        </div>
+    </main>
+</body>
+</html>

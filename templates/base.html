@@ -1,0 +1,156 @@
+{% load static %}
+{% load i18n %}
+
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>توس‌حجت</title>
+    <link rel="stylesheet" href="{% static "css/output.css" %}">
+    <link href="https://cdn.jsdelivr.net/npm/vazir-font/css/vazir.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-50">
+<header class="bg-gray-900 sticky top-0 z-10 transition-opacity duration-500">
+    <nav class="flex flex-col md:flex-row justify-evenly items-center px-4 py-3 md:space-x-reverse md:space-x-10 gap-4">
+        <div class="text-2xl font-vazir font-semibold text-red-500 text-center">
+            <a href="{% url 'index' %}">{% trans "توس‌حجت" %}</a>
+        </div>
+
+        <div class="hamburger flex flex-col md:hidden cursor-pointer" id="hamburger">
+            <span class="block w-6 h-0.5 bg-white mb-1 transition-transform duration-300"></span>
+            <span class="block w-6 h-0.5 bg-white mb-1 transition-transform duration-300"></span>
+            <span class="block w-6 h-0.5 bg-white transition-transform duration-300"></span>
+        </div>
+
+        <ul
+            class="nav-links hidden flex-col items-center md:flex md:flex-row md:space-x-reverse md:space-x-8 md:space-y-0 transition-all duration-300 ease-in-out"
+            id="nav-links">
+            <li class="text-lg font-vazir font-medium hover:text-red-500 transition-colors text-white text-center">
+                <a href="{% url 'about' %}">{% trans "درباره‌شرکت" %}</a>
+            </li>
+            <li class="text-lg font-vazir font-medium hover:text-red-500 transition-colors text-white text-center">
+                <a href="{% url 'products' %}">{% trans "معرفی‌محصولات" %}</a>
+            </li>
+            <li class="text-lg font-vazir font-medium hover:text-red-500 transition-colors text-white text-center">
+                <a href="{% url 'contact' %}">{% trans "ارتباط‍‌ باما" %}</a>
+            </li>
+            <li class="text-lg font-vazir font-medium hover:text-red-500 transition-colors text-white text-center">
+                <a href="{% url 'login' %}">{% trans "ورود" %}</a>
+            </li>
+        </ul>
+
+        <div class="flex items-center space-x-reverse space-x-4">
+            <button id="theme-toggle"
+                class="text-2xl rounded px-3 py-1 bg-gray-300 dark:bg-gray-700 text-black dark:text-white shadow">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+            </button>
+
+            <div class="relative inline-block text-center">
+                <button id="lang-toggle"
+                    class="text-2xl rounded px-3 py-1 bg-gray-300 dark:bg-gray-700 text-black dark:text-white shadow">
+                    <i class="fa-solid fa-language"></i>
+                </button>
+
+                <div id="lang-menu"
+                    class="hidden absolute left-0 mt-2 w-36 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-lg transition-all duration-300 ease-in-out transform -scale-95 opacity-0">
+                    <ul class="py-1 text-gray-700 dark:text-gray-300">
+                        <li>
+                            <form method="post" action="{% url 'set_language' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="language" value="fa">
+                                <button type="submit"
+                                    class="w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 font-vazir text-center flex items-center flex-row-reverse justify-center">
+                                    فارسی
+                                    <img width="30" height="30" src="https://img.icons8.com/fluency/30/iran-circular.png" alt="iran-circular"/>
+                                </button>
+                            </form>
+                        </li>
+                        <li>
+                            <form method="post" action="{% url 'set_language' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="language" value="ar">
+                                <button type="submit"
+                                    class="w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 font-vazir text-center flex items-center flex-row-reverse justify-center">
+                                    العربیه
+                                    <img width="30" height="30" src="https://img.icons8.com/fluency/30/saudi-arabia-circular.png" alt="saudi-arabia-circular"/>
+                                </button>
+                            </form>
+                        </li>
+                        <li>
+                            <form method="post" action="{% url 'set_language' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="language" value="en">
+                                <button type="submit"
+                                    class="w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 font-vazir text-center flex items-center flex-row-reverse justify-center">
+                                    English
+                                    <img width="30" height="30" src="https://img.icons8.com/fluency/30/great-britain-circular.png" alt="great-britain-circular"/>                                </button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+    
+<main class="font-vazir dark:bg-gray-800 dark-mode-transition">
+    {% block contact %}
+ 
+    {% endblock %}
+</main>
+
+<footer class="bg-gray-900 text-white py-6">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center p-6">
+            <!-- توضیحات و لوگو -->
+            <div class="mb-6 md:mb-0 text-center md:text-left w-[512px]">
+                <p class="text-gray-400 text-sm font-Vazir">
+                    {{ footer_info.about_text }}
+                </p>
+            </div>
+
+            <!-- لینک‌های مفید -->
+            <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
+                <div class="ml-2">
+                    <h5 class="font-bold text-lg mb-2 font-Vazir">
+                        لینک‌های مفید
+                    </h5>
+                    <ul>
+                        <li><a href="{% url 'index' %}" class="text-gray-400 hover:text-white transition-colors duration-300">{% trans "خانه" %}</a></li>
+                        <li><a href="{% url 'about' %}" class="text-gray-400 hover:text-white transition-colors duration-300">{% trans "درباره ما" %}</a></li>
+                        <li><a href="{% url 'products' %}" class="text-gray-400 hover:text-white transition-colors duration-300">{% trans "محصولات" %}</a></li>
+                        <li><a href="{% url 'contact' %}" class="text-gray-400 hover:text-white transition-colors duration-300">{% trans "تماس با ما" %}</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-lg mb-2 font-Vazir">
+                        تماس با ما
+                    </h5>
+                    <ul>
+                        <li class="text-gray-400">{{ footer_info.address }}</li>
+                        <li class="text-gray-400">{{ footer_info.phone }}</li>
+                        <li class="text-gray-400">{{ footer_info.email }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- کپی رایت -->
+        <div class="mt-8 text-center">
+            <p class="text-gray-400 text-sm font-Vazir">
+                {{ footer_info.copyright_text }}
+            </p>
+        </div>
+    </div>
+</footer>
+<script src="{% static 'js/lang.js' %}"></script>
+<script src="{% static 'js/header.js' %}"></script>
+<script src="{% static 'js/simple.js' %}"></script>
+<script src="{% static 'js/dark.js' %}"></script>
+<script src="{% static 'js/product.js' %}"></script>
+<script src="{% static 'js/navbar.js' %}"></script>
+<script src="{% static 'js/items.js' %}"></script>
+</body>
+</html>
